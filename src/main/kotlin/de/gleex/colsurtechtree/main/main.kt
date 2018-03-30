@@ -1,21 +1,21 @@
 package de.gleex.colsurtechtree.main
 
 import de.gleex.colsurtechtree.model.Building
+import de.gleex.colsurtechtree.model.Job
 import de.gleex.colsurtechtree.model.Product
 import de.gleex.colsurtechtree.model.Techtree
+import de.gleex.colsurtechtree.model.builders.JobBuilder
 
 fun main(args: Array<String>) {
-    var wheat = Product("Wheat")
-    var log = Product("Log")
-    var farm = Building("Farm")
-    farm.produces(1, wheat)
-    farm.produces(3, log)
 
-    println("wheat: $wheat")
-    println("farm:  $farm")
-    println("$log is produced by  ${log.getProducedBy()}")
+    val farmer = job("farmer") {
+        worksIn("Farm") {
+        }
+    }
 
-    Techtree.addBuildings(farm)
-    Techtree.addProducts(log, wheat)
     println(Techtree)
+}
+
+fun job(name: String, block: JobBuilder.() -> Unit): Job {
+    return JobBuilder(name).apply(block).build()
 }

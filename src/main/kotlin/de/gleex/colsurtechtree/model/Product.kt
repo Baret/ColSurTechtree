@@ -5,9 +5,14 @@ import de.gleex.colsurtechtree.model.interfaces.Producing
 import java.util.*
 
 class Product(val name: String) {
+
     private val producedBy: MutableSet<Producing> = mutableSetOf()
 
     fun getProducedBy() = setOf(producedBy)
+
+    init {
+        Techtree.addProducts(this)
+    }
 
     fun producedBy(producing: Producing) {
         if(!producedBy.contains(producing)) {

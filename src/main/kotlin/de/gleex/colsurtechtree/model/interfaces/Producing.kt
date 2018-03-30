@@ -1,6 +1,5 @@
 package de.gleex.colsurtechtree.model.interfaces
 
-import au.com.console.kassava.kotlinToString
 import de.gleex.colsurtechtree.model.Product
 
 abstract class Producing {
