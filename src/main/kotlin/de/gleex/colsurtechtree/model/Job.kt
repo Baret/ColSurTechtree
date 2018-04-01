@@ -3,16 +3,12 @@ package de.gleex.colsurtechtree.model
 import au.com.console.kassava.kotlinEquals
 import java.util.*
 
-class Job(val name: String) {
+class Job(override val name: String): Entity {
 
     private val assignableBuildings: MutableSet<Building> = mutableSetOf()
 
-    constructor(name: String, vararg buildings: Building) : this(name) {
+    fun addAssignableBuildings(vararg buildings: Building) {
         assignableBuildings.addAll(buildings)
-    }
-
-    init {
-        Techtree.addJobs(this)
     }
 
     override fun toString(): String {

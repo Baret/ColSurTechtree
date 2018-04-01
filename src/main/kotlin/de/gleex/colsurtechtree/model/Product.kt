@@ -4,7 +4,7 @@ import au.com.console.kassava.kotlinEquals
 import de.gleex.colsurtechtree.model.interfaces.Producing
 import java.util.*
 
-class Product(val name: String) {
+class Product(override val name: String): Entity {
 
     private val producedBy: MutableSet<Producing> = mutableSetOf()
 

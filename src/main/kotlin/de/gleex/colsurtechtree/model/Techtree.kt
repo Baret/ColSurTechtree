@@ -25,4 +25,38 @@ object Techtree {
         }
         return str1
     }
+
+    fun getProduct(productName: String): Product {
+        val product = products.find { it.name == productName }
+        return if (product == null) {
+            val newProduct = Product(productName)
+            products.add(newProduct)
+            newProduct
+        } else {
+            product
+        }
+    }
+
+    fun getJob(jobName: String): Job {
+        val job = jobs.find { it.name == jobName }
+        return if (job == null) {
+            val newJob = Job(jobName)
+            jobs.add(newJob)
+            newJob
+        } else {
+            job
+        }
+    }
+
+    fun getBuilding(buildingName: String): Building {
+        val building = buildings.find { it.name == buildingName }
+        return if (building == null) {
+            val newBuilding = Building(buildingName)
+            buildings.add(newBuilding)
+            newBuilding
+        } else {
+            building
+        }
+    }
+
 }
