@@ -10,7 +10,12 @@ class BuildingBuilder(name: String) {
         return building
     }
 
-    fun produces(count: Int, productName: String) {
-        building.produces(count, Techtree.getProduct(productName))
+    fun produces(productName: String) {
+        produces(1, productName)
+    }
+
+    fun produces(count: Int = 1, productName: String, recipeBlock: RecipeBuilder.() -> Unit = {}) {
+        val recipe = RecipeBuilder(productName, count).apply(recipeBlock).build()
+        building.produces(recipe)
     }
 }

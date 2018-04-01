@@ -5,11 +5,11 @@ import java.util.*
 
 class Building(override val name: String) : Entity {
 
-    private val produced: MutableMap<Product, Int> = mutableMapOf()
+    private val produced: MutableSet<Recipe> = mutableSetOf()
 
-    fun produces(count: Int, product: Product) {
-        produced[product] = count
-        product.producedBy(this)
+    fun produces(recipe: Recipe) {
+        produced.add(recipe)
+        recipe.forProduct.product.producedBy(this)
     }
 
     override fun toString() = "Building $name produces $produced"

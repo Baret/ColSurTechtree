@@ -9,6 +9,6 @@ fun job(name: String, block: JobBuilder.() -> Unit): Job {
     return JobBuilder(name).apply(block).build()
 }
 
-fun building(name: String, block: BuildingBuilder.() -> Unit): Building {
+fun building(name: String, block: BuildingBuilder.() -> Unit = {}): Building {
     return BuildingBuilder(name).apply(block).build()
 }
