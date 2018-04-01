@@ -6,10 +6,6 @@ object Techtree {
     private val products: MutableSet<Product> = mutableSetOf()
     private val jobs: MutableSet<Job> = mutableSetOf()
 
-    fun addBuildings(vararg buildings: Building) = this.buildings.addAll(buildings)
-    fun addProducts(vararg products: Product) = this.products.addAll(products)
-    fun addJobs(vararg jobs: Job) = this.jobs.addAll(jobs)
-
     override fun toString(): String {
         var str = "Full techtree:\n"
         str += textBlock("Jobs", jobs)

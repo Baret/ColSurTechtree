@@ -1,10 +1,16 @@
 package de.gleex.colsurtechtree.model
 
 import au.com.console.kassava.kotlinEquals
-import de.gleex.colsurtechtree.model.interfaces.Producing
 import java.util.*
 
-class Building(override val name: String) : Producing() {
+class Building(override val name: String) : Entity {
+
+    private val produced: MutableMap<Product, Int> = mutableMapOf()
+
+    fun produces(count: Int, product: Product) {
+        produced[product] = count
+        product.producedBy(this)
+    }
 
     override fun toString() = "Building $name produces $produced"
 

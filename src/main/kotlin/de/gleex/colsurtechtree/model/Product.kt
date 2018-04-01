@@ -1,20 +1,13 @@
 package de.gleex.colsurtechtree.model
 
 import au.com.console.kassava.kotlinEquals
-import de.gleex.colsurtechtree.model.interfaces.Producing
 import java.util.*
 
 class Product(override val name: String): Entity {
 
-    private val producedBy: MutableSet<Producing> = mutableSetOf()
+    private val producedBy: MutableSet<Building> = mutableSetOf()
 
-    fun getProducedBy() = setOf(producedBy)
-
-    init {
-        Techtree.addProducts(this)
-    }
-
-    fun producedBy(producing: Producing) {
+    fun producedBy(producing: Building) {
         if(!producedBy.contains(producing)) {
             producedBy.add(producing)
         }
