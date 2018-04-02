@@ -12,8 +12,9 @@ class JobBuilder(name: String) {
         return job
     }
 
-    fun worksIn(buildingName: String) {
-        job.addAssignableBuildings(Techtree.getBuilding(buildingName))
+    fun worksIn(buildingName: String, buildingBlock: BuildingBuilder.() -> Unit = {}) {
+        val building = BuildingBuilder(buildingName).apply(buildingBlock).build()
+        job.addAssignableBuildings(building)
     }
 
 }

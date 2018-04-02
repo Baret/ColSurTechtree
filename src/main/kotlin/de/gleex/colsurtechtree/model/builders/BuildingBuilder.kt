@@ -12,8 +12,8 @@ class BuildingBuilder(name: String) {
         return building
     }
 
-    fun produces(productName: String) {
-        produces(1, productName)
+    fun produces(productName: String, recipeBlock: RecipeBuilder.() -> Unit = {}) {
+        produces(1, productName, recipeBlock)
     }
 
     fun produces(count: Int = 1, productName: String, recipeBlock: RecipeBuilder.() -> Unit = {}) {

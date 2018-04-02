@@ -12,39 +12,32 @@ fun main(args: Array<String>) {
 }
 
 private fun defineTechtree() {
+
     job("Farmer") {
-        worksIn("Farm")
-    }
-
-    building("Farm") {
-        produces("Wheat")
-        produces("Straw")
-    }
-
-    building("Grindstone") {
-        produces(2, "Flour") {
-            needs(2, "Wheat")
+        worksIn("Farm") {
+            produces("Wheat")
+            produces("Straw")
         }
     }
 
-    building("Oven") {
-        produces(2, "Bread") {
-            needs(5, "Flour")
-            needs("Firewood")
+    job("Berry Farmer") {
+        worksIn("Berryfarm") {
+            produces("Berry Seed")
+            produces("Berries") {
+                needs("Berry Seedb")
+            }
         }
-    }
-
-    job("Grinder") {
-        worksIn("Grindstone")
     }
 
     job("Forester") {
-        worksIn("Forest")
+        worksIn("Forest") {
+            produces("Log") {
+                needs("Sapling")
+            }
+            produces("Sapling")
+        }
     }
 
-    building("Forest") {
-        produces("Log")
-    }
 
 
 }
