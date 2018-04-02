@@ -3,7 +3,7 @@ package de.gleex.colsurtechtree.model
 import au.com.console.kassava.kotlinEquals
 import java.util.*
 
-class Building(override val name: String) : Entity {
+class Building(override val name: String) : Entity() {
 
     private val produced: MutableSet<Recipe> = mutableSetOf()
 

@@ -3,7 +3,7 @@ package de.gleex.colsurtechtree.model
 import au.com.console.kassava.kotlinEquals
 import java.util.*
 
-class Job(override val name: String): Entity {
+class Job(override val name: String): Entity() {
 
     private val assignableBuildings: MutableSet<Building> = mutableSetOf()
 
@@ -12,7 +12,7 @@ class Job(override val name: String): Entity {
     }
 
     override fun toString(): String {
-        return "Job $name (assignable buildings: $assignableBuildings"
+        return "Job $name (assignable buildings: $assignableBuildings)"
     }
 
     override fun equals(other: Any?) = kotlinEquals(other, arrayOf(Job::name))

@@ -1,7 +1,7 @@
 package de.gleex.colsurtechtree.main
 
-import de.gleex.colsurtechtree.dsl.building
 import de.gleex.colsurtechtree.dsl.job
+import de.gleex.colsurtechtree.dsl.science
 import de.gleex.colsurtechtree.model.Techtree
 
 fun main(args: Array<String>) {
@@ -24,7 +24,7 @@ private fun defineTechtree() {
         worksIn("Berryfarm") {
             produces("Berry Seed")
             produces("Berries") {
-                needs("Berry Seedb")
+                needs("Berry Seed")
             }
         }
     }
@@ -38,7 +38,9 @@ private fun defineTechtree() {
         }
     }
 
-
+    science("Bread Production") {
+        unlocksJobs("Farmer", "Grinder", "Baker")
+    }
 
 }
 
