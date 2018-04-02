@@ -5,10 +5,12 @@ import de.gleex.colsurtechtree.model.Job
 import de.gleex.colsurtechtree.model.builders.BuildingBuilder
 import de.gleex.colsurtechtree.model.builders.JobBuilder
 
+@TechtreeDsl
 fun job(name: String, block: JobBuilder.() -> Unit): Job {
     return JobBuilder(name).apply(block).build()
 }
 
+@TechtreeDsl
 fun building(name: String, block: BuildingBuilder.() -> Unit = {}): Building {
     return BuildingBuilder(name).apply(block).build()
 }

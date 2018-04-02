@@ -1,8 +1,10 @@
 package de.gleex.colsurtechtree.model.builders
 
+import de.gleex.colsurtechtree.dsl.TechtreeDsl
 import de.gleex.colsurtechtree.model.Building
 import de.gleex.colsurtechtree.model.Techtree
 
+@TechtreeDsl
 class BuildingBuilder(name: String) {
     private val building = Techtree.getBuilding(name)
 

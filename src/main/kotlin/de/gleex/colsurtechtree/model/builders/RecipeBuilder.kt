@@ -1,9 +1,11 @@
 package de.gleex.colsurtechtree.model.builders
 
+import de.gleex.colsurtechtree.dsl.TechtreeDsl
 import de.gleex.colsurtechtree.model.ProductCount
 import de.gleex.colsurtechtree.model.Recipe
 import de.gleex.colsurtechtree.model.Techtree
 
+@TechtreeDsl
 class RecipeBuilder(productName: String, count: Int) {
     private val forProduct = ProductCount(count, Techtree.getProduct(productName))
     private val needs: MutableSet<ProductCount> = mutableSetOf()
