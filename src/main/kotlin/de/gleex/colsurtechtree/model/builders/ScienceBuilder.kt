@@ -18,5 +18,8 @@ class ScienceBuilder(val name: String) {
         }
     }
 
+    fun requires(vararg scienceNames: String) {
+        scienceNames.forEach { science.requires(Techtree.getScience(it)) }
+    }
 
 }
