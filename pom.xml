@@ -13,6 +13,10 @@
             <id>jcenter</id>
             <url>https://jcenter.bintray.com/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <properties>
@@ -25,7 +29,13 @@
             <artifactId>jgrapht-core</artifactId>
             <version>1.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.jgraph</groupId>
+            <artifactId>jgraphx</artifactId>
+            <version>v3.9.3</version>
+        </dependency>
 
+        <!-- kotlinEquals -->
         <dependency>
             <groupId>au.com.console</groupId>
             <artifactId>kassava</artifactId>

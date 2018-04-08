@@ -12,14 +12,6 @@ fun main(args: Array<String>) {
 }
 
 private fun defineTechtree() {
-
-    job("Farmer") {
-        worksIn("Farm") {
-            produces("Wheat")
-            produces("Straw")
-        }
-    }
-
     job("Berry Farmer") {
         worksIn("Berryfarm") {
             produces("Berry Seed")
@@ -31,7 +23,7 @@ private fun defineTechtree() {
 
     job("Forester") {
         worksIn("Forest") {
-            produces("Log") {
+            produces(2, "Log") {
                 needs("Sapling")
             }
             produces("Sapling")
@@ -39,7 +31,7 @@ private fun defineTechtree() {
     }
 
     science("Bread Production") {
-        unlocksJobs("Farmer", "Grinder", "Baker")
+        unlocksJobs("Farmer", "Miller", "Baker")
     }
 
 }
