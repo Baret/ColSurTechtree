@@ -21,13 +21,19 @@
 
     <properties>
         <kotlin.version>1.2.30</kotlin.version>
+        <jgrapht.version>1.1.0</jgrapht.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jgrapht</groupId>
             <artifactId>jgrapht-core</artifactId>
-            <version>1.1.0</version>
+            <version>${jgrapht.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+            <artifactId>jgrapht-ext</artifactId>
+            <version>${jgrapht.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.jgraph</groupId>

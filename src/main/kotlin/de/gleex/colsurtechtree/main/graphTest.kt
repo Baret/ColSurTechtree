@@ -1,29 +1,30 @@
 package de.gleex.colsurtechtree.main
 
 import com.mxgraph.swing.mxGraphComponent
-import com.mxgraph.view.mxGraph
+import org.jgrapht.Graph
+import org.jgrapht.ext.JGraphXAdapter
+import org.jgrapht.graph.DefaultEdge
+import org.jgrapht.graph.SimpleGraph
 import javax.swing.JFrame
 
 fun main(args: Array<String>) {
+    // JgraphT
+    println("build JgraphT graph")
+    val g: Graph<String, DefaultEdge> = SimpleGraph(DefaultEdge::class.java)
+    g.addVertex("Farm")
+    g.addVertex("Wheat")
+    g.addEdge("Farm", "Wheat")
+
     // JGraphX (other library)
-    println("building mx graph")
-    val mxGraph = mxGraph()
-    val model = mxGraph.model
-    try {
-        model.beginUpdate()
-
-        val a = mxGraph.insertVertex(mxGraph.defaultParent, null, "Farm", 10.0, 10.0, 50.0, 50.0)
-        val b = mxGraph.insertVertex(mxGraph.defaultParent, null, "Bread", 10.0, 110.0, 50.0, 50.0)
-
-        mxGraph.insertEdge(mxGraph.defaultParent, null, "produces", a, b)
-    } finally {
-        model.endUpdate()
-    }
     println("graph built, lets show it")
+
+    val foo = JGraphXAdapter<String, DefaultEdge>(g)
 
     val frame = JFrame("JGraphX test")
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    frame.contentPane.add(mxGraphComponent(mxGraph))
+    val mxGraphComponent = mxGraphComponent(foo)
+    frame.contentPane.add(mxGraphComponent)
     frame.isVisible = true
+
 
 }
