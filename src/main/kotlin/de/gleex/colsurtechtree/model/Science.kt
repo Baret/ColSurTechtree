@@ -14,6 +14,10 @@ class Science(override val name: String) : Entity() {
 
     fun requires(requiredScience: Science) = requires.add(requiredScience)
 
+    fun getUnlocks(): Set<Entity> = unlocks
+
+    fun getRequires(): Set<Science> = requires
+
     override fun toString(): String = "Science $name requires ${if(requires.isEmpty()) "nothing" else requires}, unlocks $unlocks"
 
     override fun equals(other: Any?) = kotlinEquals(other, arrayOf(Science::name))

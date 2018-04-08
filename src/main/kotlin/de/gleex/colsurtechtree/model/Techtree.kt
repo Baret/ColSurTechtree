@@ -48,4 +48,12 @@ object Techtree {
             newObject
         }
     }
+
+    fun getSciences(): Set<Science> = sciences
+
+    fun getBuildings(): Set<Building> = buildings
+
+    fun getJobs(): Set<Job> = jobs
+
+    fun getProducts(): Set<Product> = products
 }
