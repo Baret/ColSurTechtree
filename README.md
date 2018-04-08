@@ -48,3 +48,7 @@ Full techtree:
 	Science (1):
 		Science Bread Production requires nothing, unlocks [Job Farmer (assignable buildings: []), Job Miller (assignable buildings: []), Job Baker (assignable buildings: [])]
 ```
+
+# Visualization of the tree (coming soon)
+
+After defining production lines and dependencies between jobs and products (the full techtree the game currently has or just a portion of that) you can display an interactive diagram of this tree to see for example how many colonists you need to produce a specific item or how much you will need to produce to unlock a science.
