@@ -102,140 +102,176 @@ fun fullTree() {
     job("Forester") {
     }
     job("Laborer") {
-    	// baking.json
+        // baking.json
         worksIn("Baker") {
             produces(2, "Bread") {
                 needs(5, "Flour")
-				needs("Firewood")
+                needs("Firewood")
             }
         }
-    	// bloomery.json
+        // bloomery.json
         worksIn("Bloomery") {
             produces("Iron ingot") {
                 needs("Iron ore")
-				needs("Charcoal")
+                needs("Charcoal")
             }
             produces("Lead") {
                 needs("Galena lead")
-				needs("Charcoal")
+                needs("Charcoal")
             }
             produces("Silver ingot"/*, "Crystal"*/) {
                 needs("Galena silver")
-				needs("Charcoal")
+                needs("Charcoal")
             }
-			// TODO same as above, but multiple outputs are currently not supported
+            // TODO same as above, but multiple outputs are currently not supported
             produces(/*"Silver ingot", */"Crystal") {
                 needs("Galena silver")
-				needs("Charcoal")
+                needs("Charcoal")
             }
         }
-    	// dyeing.json
+        // dyeing.json
         worksIn("Dyer") {
             produces(4, "Quarterblock black") {
                 needs(4, "Quarterblock grey")
-				needs("Charcoal")
+                needs("Charcoal")
             }
             produces(4, "Quarterblock white") {
                 needs(4, "Quarterblock grey")
-				needs("Gypsum")
+                needs("Gypsum")
             }
             produces(5, "Planks red") {
                 needs(5, "Planks")
-				needs(3, "Hollyhock")
+                needs(3, "Hollyhock")
             }
             produces(5, "Planks green") {
                 needs(5, "Planks")
-				needs(2, "Alkanet")
-				needs(2, "Wolfsbane")
+                needs(2, "Alkanet")
+                needs(2, "Wolfsbane")
             }
             produces(5, "Planks cyan") {
                 needs(5, "Planks")
-				needs(2, "Alkanet")
-				needs(1, "Wolfsbane")
+                needs(2, "Alkanet")
+                needs(1, "Wolfsbane")
             }
             produces(5, "Planks blue") {
                 needs(5, "Planks")
-				needs(3, "Alkanet")
+                needs(3, "Alkanet")
             }
             produces(5, "Planks yellow") {
                 needs(5, "Planks")
-				needs(3, "Wolfsbane")
+                needs(3, "Wolfsbane")
             }
             produces(5, "Planks pink") {
                 needs(5, "Planks")
-				needs(2, "Alkanet")
-				needs(2, "Hollyhock")
+                needs(2, "Alkanet")
+                needs(2, "Hollyhock")
             }
             produces(5, "Planks grey") {
                 needs(5, "Planks")
-				needs("Charcoal")
-				needs(2, "Gypsum")
+                needs("Charcoal")
+                needs(2, "Gypsum")
             }
             produces(5, "Red planks") {
                 needs(5, "Coated planks")
-				needs(3, "Hollyhock")
+                needs(3, "Hollyhock")
             }
             produces(5, "Black planks") {
                 needs(5, "Coated planks")
-				needs(2, "Charcoal")
+                needs(2, "Charcoal")
             }
             produces(5, "Carpet red") {
                 needs(5, "Carpet white")
-				needs(3, "Hollyhock")
+                needs(3, "Hollyhock")
             }
             produces(5, "Carpet blue") {
                 needs(5, "Carpet white")
-				needs(3, "Alkanet")
+                needs(3, "Alkanet")
             }
             produces(5, "Carpet yellow") {
                 needs(5, "Carpet white")
-				needs(3, "Wolfsbane")
+                needs(3, "Wolfsbane")
             }
             produces(5, "Stonebricks white") {
                 needs(5, "Stonebricks")
-				needs(5, "Gypsum")
+                needs(5, "Gypsum")
             }
             produces(5, "Stonebricks black") {
                 needs(5, "Stonebricks")
-				needs("Charcoal")
+                needs("Charcoal")
             }
             produces("Lantern white") {
                 needs("Lantern yellow")
-				needs(3, "Gypsum")
+                needs(3, "Gypsum")
             }
             produces("Lantern green") {
                 needs("Lantern yellow")
-				needs("Alkanet")
-				needs("Wolfsbane")
+                needs("Alkanet")
+                needs("Wolfsbane")
             }
             produces("Lantern blue") {
                 needs("Lantern yellow")
-				needs(2, "Alkanet")
+                needs(2, "Alkanet")
             }
             produces("Lantern red") {
                 needs("Lantern yellow")
-				needs(2, "Hollyhock")
+                needs(2, "Hollyhock")
             }
             produces("Lantern orange") {
                 needs("Lantern yellow")
-				needs("Hollyhock")
-				needs("Wolfsbane")
+                needs("Hollyhock")
+                needs("Wolfsbane")
             }
             produces("Lantern cyan") {
                 needs("Lantern yellow")
-				needs(2, "Alkanet")
-				needs("Wolfsbane")
+                needs(2, "Alkanet")
+                needs("Wolfsbane")
             }
             produces("Lantern pink") {
                 needs("Lantern yellow")
-				needs("Alkanet")
-				needs("Hollyhock")
+                needs("Alkanet")
+                needs("Hollyhock")
             }
             produces(5, "Cobblestone red") {
                 needs(5, "Cobblestone grey")
-				needs(2, "Hollyhock")
+                needs(2, "Hollyhock")
             }
-       }
+        }
+        // fineryforge.json
+        worksIn("Finery Forge") {
+            produces("Steel ingot") {
+                needs(2, "Iron wrought")
+                needs("Cokes")
+            }
+            produces("Gold ingot") {
+                needs("Gold ore")
+                needs("Cokes")
+            }
+        }
+        // grinding.json
+        worksIn("Grinder") {
+            produces(2, "Flour") {
+                needs(2, "Wheat")
+            }
+        }
+        // gunsmith.json
+        worksIn("Gunsmith") {
+            produces(3, "Lead bullet") {
+                needs("Lead")
+            }
+            produces("Gunpowder") {
+                needs("Salpeter")
+                needs("Charcoal")
+            }
+            produces(3, "Gunpowder pouch") {
+                needs("Gunpowder")
+                needs(3, "Linen pouch")
+            }
+            produces("Matchlockgun") {
+                needs(3, "Steel parts")
+                needs("Coated planks")
+                needs("Copper parts")
+            }
+        }
     }
     job("Wheat Farmer") {
     }
