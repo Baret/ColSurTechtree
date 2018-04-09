@@ -102,6 +102,140 @@ fun fullTree() {
     job("Forester") {
     }
     job("Laborer") {
+    	// baking.json
+        worksIn("Baker") {
+            produces(2, "Bread") {
+                needs(5, "Flour")
+				needs("Firewood")
+            }
+        }
+    	// bloomery.json
+        worksIn("Bloomery") {
+            produces("Iron ingot") {
+                needs("Iron ore")
+				needs("Charcoal")
+            }
+            produces("Lead") {
+                needs("Galena lead")
+				needs("Charcoal")
+            }
+            produces("Silver ingot"/*, "Crystal"*/) {
+                needs("Galena silver")
+				needs("Charcoal")
+            }
+			// TODO same as above, but multiple outputs are currently not supported
+            produces(/*"Silver ingot", */"Crystal") {
+                needs("Galena silver")
+				needs("Charcoal")
+            }
+        }
+    	// dyeing.json
+        worksIn("Dyer") {
+            produces(4, "Quarterblock black") {
+                needs(4, "Quarterblock grey")
+				needs("Charcoal")
+            }
+            produces(4, "Quarterblock white") {
+                needs(4, "Quarterblock grey")
+				needs("Gypsum")
+            }
+            produces(5, "Planks red") {
+                needs(5, "Planks")
+				needs(3, "Hollyhock")
+            }
+            produces(5, "Planks green") {
+                needs(5, "Planks")
+				needs(2, "Alkanet")
+				needs(2, "Wolfsbane")
+            }
+            produces(5, "Planks cyan") {
+                needs(5, "Planks")
+				needs(2, "Alkanet")
+				needs(1, "Wolfsbane")
+            }
+            produces(5, "Planks blue") {
+                needs(5, "Planks")
+				needs(3, "Alkanet")
+            }
+            produces(5, "Planks yellow") {
+                needs(5, "Planks")
+				needs(3, "Wolfsbane")
+            }
+            produces(5, "Planks pink") {
+                needs(5, "Planks")
+				needs(2, "Alkanet")
+				needs(2, "Hollyhock")
+            }
+            produces(5, "Planks grey") {
+                needs(5, "Planks")
+				needs("Charcoal")
+				needs(2, "Gypsum")
+            }
+            produces(5, "Red planks") {
+                needs(5, "Coated planks")
+				needs(3, "Hollyhock")
+            }
+            produces(5, "Black planks") {
+                needs(5, "Coated planks")
+				needs(2, "Charcoal")
+            }
+            produces(5, "Carpet red") {
+                needs(5, "Carpet white")
+				needs(3, "Hollyhock")
+            }
+            produces(5, "Carpet blue") {
+                needs(5, "Carpet white")
+				needs(3, "Alkanet")
+            }
+            produces(5, "Carpet yellow") {
+                needs(5, "Carpet white")
+				needs(3, "Wolfsbane")
+            }
+            produces(5, "Stonebricks white") {
+                needs(5, "Stonebricks")
+				needs(5, "Gypsum")
+            }
+            produces(5, "Stonebricks black") {
+                needs(5, "Stonebricks")
+				needs("Charcoal")
+            }
+            produces("Lantern white") {
+                needs("Lantern yellow")
+				needs(3, "Gypsum")
+            }
+            produces("Lantern green") {
+                needs("Lantern yellow")
+				needs("Alkanet")
+				needs("Wolfsbane")
+            }
+            produces("Lantern blue") {
+                needs("Lantern yellow")
+				needs(2, "Alkanet")
+            }
+            produces("Lantern red") {
+                needs("Lantern yellow")
+				needs(2, "Hollyhock")
+            }
+            produces("Lantern orange") {
+                needs("Lantern yellow")
+				needs("Hollyhock")
+				needs("Wolfsbane")
+            }
+            produces("Lantern cyan") {
+                needs("Lantern yellow")
+				needs(2, "Alkanet")
+				needs("Wolfsbane")
+            }
+            produces("Lantern pink") {
+                needs("Lantern yellow")
+				needs("Alkanet")
+				needs("Hollyhock")
+            }
+            produces(5, "Cobblestone red") {
+                needs(5, "Cobblestone grey")
+				needs(2, "Hollyhock")
+            }
+       }
     }
     job("Wheat Farmer") {
     }
