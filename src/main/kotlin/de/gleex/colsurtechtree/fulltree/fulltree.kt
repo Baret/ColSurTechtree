@@ -1,6 +1,6 @@
 package de.gleex.colsurtechtree.fulltree
 
-import de.gleex.colsurtechtree.dsl.science
+import de.gleex.colsurtechtree.dsl.*
 
 // This function will create the (possibly) full tech/production tree of colony survival
 fun fullTree() {
@@ -89,4 +89,20 @@ fun fullTree() {
     }
 
     // Jobs
+    job("Berry Farmer") {
+    }
+    job("Flax Farmer") {
+    }
+    job("Alkanet Farmer") {
+    }
+    job("Hollyhock Farmer") {
+    }
+    job("Wolfsbane Farmer") {
+    }
+    job("Forester") {
+    }
+    job("Laborer") {
+    }
+    job("Wheat Farmer") {
+    }
 }
