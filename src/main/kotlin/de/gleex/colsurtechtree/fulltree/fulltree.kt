@@ -272,6 +272,16 @@ fun fullTree() {
                 needs("Copper parts")
             }
         }
+        // kiln.json
+        worksIn("Kiln") {
+            produces(2, "Charcoal") {
+                needs(7, "Firewood")
+            }
+            produces(2, "Cokes") {
+                needs("Coal ore")
+                needs(2, "Firewood")
+            }
+        }
     }
     job("Wheat Farmer") {
     }
