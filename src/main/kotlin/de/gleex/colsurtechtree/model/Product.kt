@@ -13,6 +13,8 @@ class Product(override val name: String): Entity() {
         }
     }
 
+    override fun toShortString() = "Product $name"
+
     override fun toString(): String =
             "Product $name${if(producedBy.isEmpty()) " (is not produced by a building!)" else ""}"
 

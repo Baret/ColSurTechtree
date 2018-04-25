@@ -12,7 +12,9 @@ class Building(override val name: String) : Entity() {
         recipe.forProduct.product.producedBy(this)
     }
 
-    override fun toString() = "Building $name produces $produced"
+    override fun toShortString() = "Building $name"
+
+    override fun toString(): String = "Building $name produces ${produced}}"
 
     override fun equals(other: Any?) = kotlinEquals(other, arrayOf(Building::name))
 

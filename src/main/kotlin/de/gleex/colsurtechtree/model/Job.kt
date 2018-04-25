@@ -11,9 +11,9 @@ class Job(override val name: String): Entity() {
         assignableBuildings.addAll(buildings)
     }
 
-    override fun toString(): String {
-        return "Job $name (assignable buildings: $assignableBuildings)"
-    }
+    override fun toShortString() = "Job $name"
+
+    override fun toString(): String = "Job $name (assignable buildings: ${assignableBuildings.map(Building::toShortString)}"
 
     override fun equals(other: Any?) = kotlinEquals(other, arrayOf(Job::name))
 

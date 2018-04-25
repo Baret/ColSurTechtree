@@ -1,5 +1,6 @@
 package de.gleex.colsurtechtree.main
 
+import de.gleex.colsurtechtree.dsl.building
 import de.gleex.colsurtechtree.dsl.job
 import de.gleex.colsurtechtree.dsl.science
 import de.gleex.colsurtechtree.model.Techtree
@@ -36,6 +37,26 @@ private fun defineTestTechtree() {
         costs(5, "Copper Parts")
         costs(10, "Nails")
         costs(10, "Berries")
+    }
+
+    building("Workbench") {
+        produces(2, "Copper Nails") {
+            needs("Copper Ore")
+        }
+        produces("Copper Tools") {
+            needs("Copper Ore")
+        }
+        produces("Copper Parts") {
+            needs("Copper Ore")
+        }
+        produces("Bowstring") {
+            needs(2, "Leaves")
+        }
+        produces("Bed") {
+            needs(5, "Straw")
+            needs("Plank")
+            needs(8, "Copper Nails")
+        }
     }
 
 }

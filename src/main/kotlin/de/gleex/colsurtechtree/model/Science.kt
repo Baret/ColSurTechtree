@@ -23,7 +23,11 @@ class Science(override val name: String) : Entity() {
 
     fun getConsts(): Set<ProductCount> = costs
 
-    override fun toString(): String = "Science $name requires ${if(requires.isEmpty()) "nothing" else requires}, unlocks $unlocks, costs $costs"
+    override fun toShortString() = "Science $name"
+
+    override fun toString(): String {
+        return "Science $name requires ${if(requires.isEmpty()) "nothing" else requires.map(Science::toShortString)}, unlocks ${unlocks.map(Entity::toShortString)}, costs $costs"
+    }
 
     override fun equals(other: Any?) = kotlinEquals(other, arrayOf(Science::name))
 
