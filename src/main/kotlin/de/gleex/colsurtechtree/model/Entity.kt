@@ -1,6 +1,8 @@
 package de.gleex.colsurtechtree.model
 
-abstract class Entity: Comparable<Entity> {
+import java.io.Serializable
+
+abstract class Entity: Comparable<Entity>, Serializable {
     abstract val name: String
     private val unlockedBy: MutableSet<Science> = mutableSetOf()
 

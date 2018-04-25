@@ -3,12 +3,13 @@ package de.gleex.colsurtechtree.main
 import de.gleex.colsurtechtree.dsl.building
 import de.gleex.colsurtechtree.dsl.job
 import de.gleex.colsurtechtree.dsl.science
+import de.gleex.colsurtechtree.fulltree.fullTree
 import de.gleex.colsurtechtree.model.Techtree
 
 fun main(args: Array<String>) {
 
-    //fullTree()
-    defineTestTechtree()
+    fullTree()
+    //defineTestTechtree()
 
     println(Techtree)
 }

@@ -15,8 +15,9 @@ class Product(override val name: String): Entity() {
 
     override fun toShortString() = "Product $name"
 
-    override fun toString(): String =
-            "Product $name${if(producedBy.isEmpty()) " (is not produced by a building!)" else ""}"
+    override fun toString(): String {
+        return "Product $name${if(producedBy.isEmpty()) " (is not produced by a building!)" else ""}"
+    }
 
     override fun equals(other: Any?) = kotlinEquals(other, arrayOf(Product::name))
 
