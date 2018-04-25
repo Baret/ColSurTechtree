@@ -1,6 +1,7 @@
 package de.gleex.colsurtechtree.model.builders
 
 import de.gleex.colsurtechtree.dsl.TechtreeDsl
+import de.gleex.colsurtechtree.model.ProductCount
 import de.gleex.colsurtechtree.model.Science
 import de.gleex.colsurtechtree.model.Techtree
 
@@ -20,6 +21,10 @@ class ScienceBuilder(val name: String) {
 
     fun requires(vararg scienceNames: String) {
         scienceNames.forEach { science.requires(Techtree.getScience(it)) }
+    }
+
+    fun costs(count: Int, productName: String) {
+        science.costs(ProductCount(count, Techtree.getProduct(productName)))
     }
 
 }
